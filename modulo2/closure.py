@@ -1,12 +1,15 @@
 # Closure e funções que recebem outras funções
 
-def criar_saudacao(saudacao, nome):
-    def saudar():
-        return f'{saudacao},{nome}'
+def criar_saudacao(saudacao):
+    def saudar(nome):
+        return f'{saudacao}'
     return saudar
 
-s1 = criar_saudacao('Olá', ' Diego')
-s2 = criar_saudacao('Olá', ' Diego')
+falar_bom_dia = criar_saudacao('Bom dia ')
+falar_boa_noite = criar_saudacao('Boa noite')
 
-print(s1()) # Aqui é onde ocorre o closure, chamando a função na hora da execução
-print(s2())
+lista = ['Diego', 'Maria', 'Luiz']
+
+for nome in lista:
+    print(falar_bom_dia(nome),nome)
+    print(falar_boa_noite(nome),nome)
