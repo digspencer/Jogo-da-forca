@@ -13,3 +13,6 @@ print(lista)
 
 lista = [numero for numero in range(10)]
 print(lista)
+
+lista2 = [item * 2 for item in range(10)]
+print(lista2)
